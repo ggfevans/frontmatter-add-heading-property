@@ -1,0 +1,55 @@
+# Sample configuration file for testing
+# This demonstrates all available configuration options
+
+# Custom patterns for daily note directories
+daily_note_patterns:
+  - 'personal/journal/*'
+  - 'work/daily-standups/*'
+  - 'meetings/daily/*'
+  - 'life/diary/*'
+
+# Custom template directory patterns
+template_directories:
+  - 'my-templates/*'
+  - 'shared-templates/*'
+  - 'team/templates/*'
+  - 'organization/templates/*'
+
+# Title case configuration
+title_case:
+  # Terms to preserve in uppercase
+  preserve_terms:
+    - 'API'
+    - 'APIs'
+    - 'REST'
+    - 'GraphQL'
+    - 'JSON'
+    - 'XML'
+    - 'HTML'
+    - 'CSS'
+    - 'JS'
+    - 'JavaScript'
+    - 'TypeScript'
+    - 'iOS'
+    - 'macOS'
+    - 'GitHub'
+    - 'GitLab'
+    - 'Docker'
+    - 'Kubernetes'
+    - 'AWS'
+    - 'PhD'
+    - 'CEO'
+    - 'CTO'
+    - 'USA'
+    - 'UK'
+    - 'EU'
+
+# Patterns for directories/files to exclude
+exclude_patterns:
+  - 'private/*'
+  - 'personal/secrets/*'
+  - '.trash/*'
+  - 'archive/old/*'
+  - '*.backup'
+  - '*.tmp'
+  - 'drafts/incomplete/*'
