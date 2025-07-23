@@ -1,0 +1,82 @@
+# Example configuration file for Obsidian Heading Property Script
+# Copy this file to `.heading-config.yaml` in your vault root and customize as needed
+
+# Custom daily note directory patterns
+# The script will treat files in these directories as daily notes
+daily_note_patterns:
+  - "00-INBOX/daily-notes/"
+  - "99-ARCHIVE/*/??-*/"    # Matches patterns like "99-ARCHIVE/2025/01-January/"
+  - "journal/"
+  - "daily/"
+  - "dailies/"
+
+# Project summary file suffix
+# Files ending with this suffix will be formatted as "[name] - Summary"
+project_summary_suffix: "-summary"
+
+# Title case configuration
+title_case:
+  enabled: true
+  # Technical terms to preserve in UPPERCASE
+  preserve_terms: 
+    - "API"
+    - "APIs"
+    - "UI"
+    - "UX"
+    - "CSS"
+    - "HTML"
+    - "JS"
+    - "JSON"
+    - "YAML"
+    - "XML"
+    - "SQL"
+    - "HTTP"
+    - "HTTPS"
+    - "URL"
+    - "URI"
+    - "ID"
+    - "iOS"
+    - "macOS"
+    - "IDE"
+    - "CLI"
+    - "GUI"
+    - "REST"
+    - "GraphQL"
+    - "OAuth"
+    - "JWT"
+    - "PDF"
+    - "PNG"
+    - "JPG"
+    - "GIF"
+    - "SVG"
+    - "MP3"
+    - "MP4"
+    - "ZIP"
+    - "README"
+
+# Template directories
+# Files in these directories will be formatted as "Template: [filename]"
+template_directories:
+  - "04-TEMPLATES/"
+  - "templates/"
+  - "template/"
+  - "Templates/"
+
+# Exclusion patterns
+# Files matching these patterns will be skipped entirely
+exclude_patterns:
+  - "**/.obsidian/**"       # Obsidian configuration files
+  - "**/drafts/**"          # Draft files
+  - "**/*.excalidraw.md"    # Excalidraw drawings
+  - "**/temp/**"            # Temporary files
+  - "**/archive/**"         # Archived content (optional)
+  - "**/.trash/**"          # Trash files
+
+# Additional organizational directory patterns
+# Customize these based on your vault structure
+organizational_patterns:
+  - "01-INBOX"
+  - "02-PROJECTS" 
+  - "03-AREAS"
+  - "04-RESOURCES"
+  - "05-ARCHIVE"
