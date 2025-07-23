@@ -77,6 +77,30 @@ python add_headings.py /path/to/your/obsidian/vault --backup --title-case --verb
 - **Graph View**: Uses heading values for node labels (if configured)
 - **Dataview**: Can query and display files using the heading property
 
+## Example Run
+
+```bash
+$ python add_headings.py /path/to/vault --title-case --verbose
+
+Processing vault: D:\notes\vaults\daggerheart-campaign
+Found 83 markdown files
+✓ Added heading to: campaign-overview.md → "Campaign Overview"
+✓ Added heading to: vaerenth-character-sheet.md → "Vaerenth Character Sheet"
+✓ Added heading to: Last-Light.md → "Last Light"
+✓ Added heading to: README.md → "Locations - README"
+...
+
+==================================================
+SUMMARY
+==================================================
+✓ Processed: 83
+⚠ Skipped (existing): 0
+⚠ Skipped (special): 0
+✗ Errors: 0
+
+Total files: 83
+```
+
 ## Heading Generation Rules
 
 The script applies different heading formats based on file characteristics:
