@@ -1,10 +1,30 @@
 # Obsidian Heading Property Script
 
-A Python script that automatically adds `heading` properties to the frontmatter of all Markdown files in an Obsidian vault. The script intelligently generates heading values based on file location, naming patterns, and content structure.
+A Python script that automatically adds `heading` properties to the frontmatter of all Markdown files in an Obsidian vault. This enables better file discovery and display in Obsidian plugins like **Omnisearch**, **Quick Switcher**, and various graph/search tools that use the `heading` property as a display name.
+
+## Why Use This Script?
+
+Many Obsidian users maintain systematic file naming conventions for organization (like `01-PROJECTS/backup-system-implementation.md` or `2025-07-22.md` for daily notes), but these technical filenames aren't ideal for searching or display purposes. 
+
+This script solves that problem by:
+
+- **Preserving your existing file naming system** - No need to rename files or reorganize your vault
+- **Enhancing plugin compatibility** - Plugins like Omnisearch, Quick Switcher, and dataview can display human-readable names
+- **Improving search experience** - Find files by their readable display names while keeping systematic file organization
+- **Maintaining automation workflows** - Your existing scripts, templates, and organizational systems continue to work unchanged
+
+**Example Benefits:**
+- File: `01-PROJECTS/backup-system-implementation.md` → Display: "Backup System Implementation"
+- File: `2025-07-22.md` → Display: "Daily Note 2025-07-22" 
+- File: `project-management-summary.md` → Display: "project-management - Summary"
+
+The script intelligently generates heading values based on file location, naming patterns, and content structure, giving you the best of both worlds: systematic organization and human-readable display names.
 
 ## Features
 
-- **Smart Heading Generation**: Automatically generates appropriate heading values based on file context
+- **Plugin-Friendly Display Names**: Creates `heading` properties that plugins like Omnisearch and Quick Switcher use for display
+- **Smart Heading Generation**: Automatically generates appropriate heading values based on file context and location
+- **Preserves File Organization**: Works with your existing file naming and folder structure - no renaming required
 - **Daily Notes Detection**: Special formatting for daily note files in configured directories
 - **Template Recognition**: Identifies and formats template files appropriately
 - **Title Case Conversion**: Optional intelligent title case conversion with technical term preservation
@@ -40,15 +60,22 @@ pip install pyyaml
 ## Quick Start
 
 ```bash
-# Basic usage - process entire vault
-python add_headings.py /path/to/your/obsidian/vault
+# Preview what changes will be made (recommended first step)
+python add_headings.py /path/to/your/obsidian/vault --dry-run --verbose
 
-# Preview changes without modifying files
-python add_headings.py /path/to/your/obsidian/vault --dry-run
+# Process entire vault with title case conversion for better display names
+python add_headings.py /path/to/your/obsidian/vault --title-case
 
-# Enable smart title case conversion
-python add_headings.py /path/to/your/obsidian/vault --title-case --verbose
+# Create backups and process with detailed logging
+python add_headings.py /path/to/your/obsidian/vault --backup --title-case --verbose
 ```
+
+**After running the script**, your files will have `heading` properties that plugins can use:
+
+- **Omnisearch**: Will display the heading value instead of filename in search results
+- **Quick Switcher**: Shows readable names when switching between files  
+- **Graph View**: Uses heading values for node labels (if configured)
+- **Dataview**: Can query and display files using the heading property
 
 ## Heading Generation Rules
 
